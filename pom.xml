@@ -16,10 +16,10 @@
         <testng-version>7.6.1</testng-version>
         <extentreports-version>5.0.9</extentreports-version>
         <bonigarcia-version>5.3.1</bonigarcia-version>
+        <assertJ-version>3.23.1</assertJ-version>
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
@@ -42,6 +42,13 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${bonigarcia-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertJ-version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 </project>

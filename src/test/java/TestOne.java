@@ -1,19 +1,18 @@
-
-import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.testng.annotations.Test;
 
-public class TestOne extends  BaseTest{
+public class TestOne extends BaseTest {
 
     @Test
-    public void test1(){
-        ExtentReports extent = new ExtentReports();
-        ExtentSparkReporter spark = new ExtentSparkReporter("Spark.html");
-        extent.attachReporter(spark);
-        extent.createTest("MyFirstTest")
-                .log(Status.PASS, "This is a logging event for MyFirstTest, and it passed!");
+    public void test1() {
+        ExtentTest test1 = extent.createTest("MyFirstTest");
+        test1.log(Status.INFO, "bblabbla1");
         driver.get("https:/www.google.pl");
-        extent.flush();
+        test1.log(Status.PASS, "it works");
+        test1.log(Status.FAIL, "test");
+        test1.fail("details", MediaEntityBuilder.createScreenCaptureFromPath("Spark.html", "siema").build());
+        test1.log(Status.PASS, "it works2");
     }
 }
