@@ -17,6 +17,7 @@
         <extentreports-version>5.0.9</extentreports-version>
         <bonigarcia-version>5.3.1</bonigarcia-version>
         <assertJ-version>3.23.1</assertJ-version>
+        <log4j-version>2.19.0</log4j-version>
     </properties>
 
     <dependencies>
@@ -48,6 +49,11 @@
             <version>${assertJ-version}</version>
             <scope>test</scope>
         </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j-version}</version>
+            </dependency>
 
     </dependencies>
 
